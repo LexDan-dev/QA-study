@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Poetry (виртуальное окружение не коммитим, lock — коммитим)
+# poetry.lock остаётся в репозитории
+
+# PyCharm: служебные файлы пользователя
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+
+# OS
+.DS_Store
+
+# Тесты / покрытие
+.pytest_cache/
+.coverage
+htmlcov/
