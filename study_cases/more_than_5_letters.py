@@ -5,5 +5,6 @@ def filter_long_words(words):
             result.append(word)
     return result
 
+
 words = ["кот", "Машина", "акробат", "Москва", "туча", "дом", "самолет"]
 print(filter_long_words(words))
