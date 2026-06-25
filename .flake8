@@ -1,0 +1,12 @@
+[flake8]
+# Согласовано с Black (он форматирует до 88 символов)
+max-line-length = 88
+# E203 и W503 конфликтуют со стилем Black — отключаем
+extend-ignore = E203, W503
+# Не проверяем чужой код и служебные папки
+exclude =
+    .venv,
+    .git,
+    __pycache__,
+    .pytest_cache,
+    .idea
