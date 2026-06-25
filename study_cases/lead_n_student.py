@@ -6,11 +6,8 @@ class Lead:
 def change_name(lead, new_name):
     lead.name = new_name
 
-def no_change_name(lead, new_name):
-    lead = Lead(new_name)      # создаём НОВЫЙ объект вместо мутации
 
-
-#________ Визуальное разделение классов ________
+# ________ Визуальное разделение классов ________
 class Student:
     def __init__(self, name: str, age: int, grades: list[float]):
         self.name = name
@@ -29,10 +26,7 @@ if __name__ == "__main__":
     lead = Lead("Олег")
     print("Изначальное имя: " + lead.name)
     change_name(lead, "Дмитрий")
-    print("Имя после изменения правильной функцией: " + lead.name)
-
-    no_change_name(lead, "Олег")
-    print("Имя после изменения функцией без мутации: " + lead.name)
+    print("Имя после изменения функцией: " + lead.name)
 
     students = [
         Student("Анна", 20, [4.5, 5.0, 3.5]),

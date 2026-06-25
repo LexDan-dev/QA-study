@@ -12,6 +12,7 @@ def get_weekday(number):
         raise ValueError("невалидные данные")
     return days[number]
 
+
 if __name__ == "__main__":
     day_number = input("Введите номер дня недели: ")
     print(get_weekday(int(day_number)))

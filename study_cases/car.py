@@ -7,6 +7,7 @@ class Car:
     def print_car_info(self):
         print(f"Марка: {self.brand}, Модель: {self.model}, Год: {self.year}")
 
+
 if __name__ == "__main__":
     car1 = Car("Lada", "Vesta", 2021)
     car2 = Car("Lada", "Granta", 2019)
