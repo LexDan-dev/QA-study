@@ -22,3 +22,7 @@ def test_get_weekday_valid(number, expected):
 def test_get_weekday_invalid(bad_number):
     with pytest.raises(ValueError):
         get_weekday(bad_number)
+
+
+def test_general_fixture_weekday(general_fixture):
+    assert "фикстура из conftest.py" == general_fixture
