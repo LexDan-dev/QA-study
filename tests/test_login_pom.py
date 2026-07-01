@@ -1,17 +1,15 @@
-from study_cases.pom_demo import FakeDriver, LoginPage
+from pages.login_page import LoginPage
 
 
-def test_login_success():
-    driver = FakeDriver()
-    page = LoginPage(driver)
+def test_login_success(fake_driver):
+    page = LoginPage(fake_driver)
     page.open()
     page.login("user", "pass")
-    assert driver.logged_in is True
+    assert fake_driver.logged_in is True
 
 
-def test_login_fail():
-    driver = FakeDriver()
-    page = LoginPage(driver)
+def test_login_fail(fake_driver):
+    page = LoginPage(fake_driver)
     page.open()
     page.login("user", "")
-    assert driver.logged_in is False
+    assert fake_driver.logged_in is False
