@@ -3,3 +3,5 @@ black
 flake8
 requests
 selenium
+selene==2.0.0rc10
+webdriver-manager

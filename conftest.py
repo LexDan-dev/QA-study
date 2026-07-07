@@ -1,4 +1,6 @@
 import pytest
+from selenium import webdriver
+from selene import browser
 
 
 @pytest.fixture
@@ -29,3 +31,12 @@ class FakeDriver:
 @pytest.fixture
 def fake_driver():
     return FakeDriver()
+
+
+@pytest.fixture(scope="function")
+def driver():
+    chrome = webdriver.Chrome()
+    browser.config.driver = chrome
+    browser.config.timeout = 4
+    yield chrome
+    chrome.quit()
