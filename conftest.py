@@ -1,6 +1,10 @@
 import pytest
+from dotenv import load_dotenv
 from selenium import webdriver
 from selene import browser
+from playwright.sync_api import sync_playwright
+
+load_dotenv()  # читает .env → переменные доступны через os.getenv
 
 
 @pytest.fixture
@@ -40,3 +44,12 @@ def driver():
     browser.config.timeout = 4
     yield chrome
     chrome.quit()
+
+
+@pytest.fixture
+def page():
+    with sync_playwright() as pw:
+        chromium = pw.chromium.launch(headless=False)  # headed → окно видно
+        new_page = chromium.new_page()
+        yield new_page  # здесь бежит тест
+        chromium.close()  # teardown: закрыть браузер
