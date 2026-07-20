@@ -13,6 +13,9 @@ venv/
 .idea/usage.statistics.xml
 .idea/shelf/
 
+# Личный контекст для Claude Code (не для репозитория)
+CLAUDE.md
+
 # OS
 .DS_Store
 
