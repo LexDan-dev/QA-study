@@ -13,5 +13,6 @@ def test_topics_section_contains_expected(page: Page):
     topics.should_have_topics_section()
 
     actual = topics.get_topic_slugs()
+    assert actual, "нет топиков - секция не загрузилась"
     missing = EXPECTED_TOPICS - actual
     assert not missing, f"нет ожидаемых топиков: {missing}"
