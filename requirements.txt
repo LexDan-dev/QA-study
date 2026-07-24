@@ -8,3 +8,4 @@ webdriver-manager
 playwright
 pytest-playwright
 pydantic
+responses
