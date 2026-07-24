@@ -7,3 +7,4 @@ selene==2.0.0rc10
 webdriver-manager
 playwright
 pytest-playwright
+pydantic
