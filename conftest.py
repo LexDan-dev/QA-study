@@ -1,4 +1,5 @@
 import pytest
+import requests
 from dotenv import load_dotenv
 from selenium import webdriver
 from selene import browser
@@ -53,3 +54,9 @@ def page():
         new_page = chromium.new_page()
         yield new_page  # здесь бежит тест
         chromium.close()  # teardown: закрыть браузер
+
+
+@pytest.fixture
+def session():
+    with requests.Session() as s:
+        yield s  # одна сессия на тест, закроется автоматически
